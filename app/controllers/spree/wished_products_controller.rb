@@ -4,6 +4,7 @@ class Spree::WishedProductsController < Spree::StoreController
   def create
     @wished_product = Spree::WishedProduct.new(wished_product_attributes)
     @wished_product.wishlist ||= spree_current_user.wishlist
+
     if @wished_product.wishlist.include? params[:wished_product][:variant_id]
       @wished_product = @wished_product.wishlist.wished_products.detect { |wp| wp.variant_id == params[:wished_product][:variant_id].to_i }
     else
@@ -36,6 +37,6 @@ class Spree::WishedProductsController < Spree::StoreController
   private
 
   def wished_product_attributes
-    params.require(:wished_product).permit(:variant_id, :wishlist_id, :remark, :quantity)
+    params.require(:wished_product).permit(:variant_id, :wishlist_id, :remark, :quantity, :volume_price_id)
   end
 end
