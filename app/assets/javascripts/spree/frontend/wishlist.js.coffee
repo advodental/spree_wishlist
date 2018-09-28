@@ -13,3 +13,8 @@ Spree.ready ($) ->
   $('form#change_wishlist_accessibility input[type=radio]').on 'click', ->
     $(this).parent().submit()
 
+  try
+    $('#wishlist').DataTable
+      'paging': false
+      'info': false
+    return
