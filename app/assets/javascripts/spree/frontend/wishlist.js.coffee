@@ -14,7 +14,12 @@ Spree.ready ($) ->
     $(this).parent().submit()
 
   try
-    $('#wishlist').DataTable
+    $('#wishlist').DataTable({
+      'destroy': true  #resolve reinitialize error popup
       'paging': false
       'info': false
-    return
+      'columnDefs': [ {
+        'orderable': false
+        'targets': [2, 3, 4]
+      }]
+    })
