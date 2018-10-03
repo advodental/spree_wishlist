@@ -13,3 +13,13 @@ Spree.ready ($) ->
   $('form#change_wishlist_accessibility input[type=radio]').on 'click', ->
     $(this).parent().submit()
 
+  try
+    $('#wishlist').DataTable({
+      'destroy': true  #resolve reinitialize error popup
+      'paging': false
+      'info': false
+      'columnDefs': [ {
+        'orderable': false
+        'targets': [2, 3, 4]
+      }]
+    })
