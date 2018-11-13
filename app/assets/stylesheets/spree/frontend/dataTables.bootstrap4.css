@@ -85,38 +85,41 @@ table.dataTable thead .sorting_desc_disabled {
   cursor: pointer;
   position: relative;
 }
-table.dataTable thead .sorting:before, table.dataTable thead .sorting:after,
-table.dataTable thead .sorting_asc:before,
-table.dataTable thead .sorting_asc:after,
-table.dataTable thead .sorting_desc:before,
-table.dataTable thead .sorting_desc:after,
-table.dataTable thead .sorting_asc_disabled:before,
-table.dataTable thead .sorting_asc_disabled:after,
-table.dataTable thead .sorting_desc_disabled:before,
-table.dataTable thead .sorting_desc_disabled:after {
+table.dataTable thead .sorting .sort-icon:before, table.dataTable thead .sorting .sort-icon:after,
+table.dataTable thead .sorting_asc .sort-icon:before,
+table.dataTable thead .sorting_asc .sort-icon:after,
+table.dataTable thead .sorting_desc .sort-icon:before,
+table.dataTable thead .sorting_desc .sort-icon:after,
+table.dataTable thead .sorting_asc_disabled .sort-icon:before,
+table.dataTable thead .sorting_asc_disabled .sort-icon:after,
+table.dataTable thead .sorting_desc_disabled .sort-icon:before,
+table.dataTable thead .sorting_desc_disabled .sort-icon:after {
   position: absolute;
   bottom: 0.9em;
   display: block;
   opacity: 0.3;
 }
-table.dataTable thead .sorting:before,
-table.dataTable thead .sorting_asc:before,
-table.dataTable thead .sorting_desc:before,
-table.dataTable thead .sorting_asc_disabled:before,
-table.dataTable thead .sorting_desc_disabled:before {
+table.dataTable thead .sort-icon{
+  position: relative;
+}
+table.dataTable thead .sorting .sort-icon:before,
+table.dataTable thead .sorting_asc .sort-icon:before,
+table.dataTable thead .sorting_desc .sort-icon:before,
+table.dataTable thead .sorting_asc_disabled .sort-icon:before,
+table.dataTable thead .sorting_desc_disabled .sort-icon:before {
   right: 1em;
   content: "\2191";
 }
-table.dataTable thead .sorting:after,
-table.dataTable thead .sorting_asc:after,
-table.dataTable thead .sorting_desc:after,
-table.dataTable thead .sorting_asc_disabled:after,
-table.dataTable thead .sorting_desc_disabled:after {
+table.dataTable thead .sorting .sort-icon:after,
+table.dataTable thead .sorting_asc .sort-icon:after,
+table.dataTable thead .sorting_desc .sort-icon:after,
+table.dataTable thead .sorting_asc_disabled .sort-icon:after,
+table.dataTable thead .sorting_desc_disabled .sort-icon:after {
   right: 0.5em;
   content: "\2193";
 }
-table.dataTable thead .sorting_asc:before,
-table.dataTable thead .sorting_desc:after {
+table.dataTable thead .sorting_asc .sort-icon:before,
+table.dataTable thead .sorting_desc .sort-icon:after {
   opacity: 1;
 }
 table.dataTable thead .sorting_asc_disabled:before,
@@ -165,16 +168,17 @@ div.dataTables_scrollFoot > .dataTables_scrollFootInner > table {
 table.dataTable.table-sm > thead > tr > th {
   padding-right: 20px;
 }
-table.dataTable.table-sm .sorting:before,
-table.dataTable.table-sm .sorting_asc:before,
-table.dataTable.table-sm .sorting_desc:before {
-  top: 5px;
-  right: 0.85em;
+table.dataTable.table-sm .sorting .sort-icon:before,
+table.dataTable.table-sm .sorting_asc .sort-icon:before,
+table.dataTable.table-sm .sorting_desc .sort-icon:before {
+  top: 0px;
+  right: -10px;
 }
-table.dataTable.table-sm .sorting:after,
-table.dataTable.table-sm .sorting_asc:after,
-table.dataTable.table-sm .sorting_desc:after {
-  top: 5px;
+table.dataTable.table-sm .sorting .sort-icon:after,
+table.dataTable.table-sm .sorting_asc .sort-icon:after,
+table.dataTable.table-sm .sorting_desc .sort-icon:after {
+  top: 0px;
+  right: -18px;
 }
 
 table.table-bordered.dataTable th,
