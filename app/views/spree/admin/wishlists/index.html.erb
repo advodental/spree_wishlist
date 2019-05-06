@@ -1,0 +1,29 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:wishlists) %>
+<% end %>
+
+<div class="well">
+  <legend><%= Spree.t(:copy_wishlists) %></legend>
+  <div class="row">
+    <%= form_tag copy_wishlists_admin_wishlists_path, method: :post, id: 'Wishlist_copy_form' do %>
+      <% @users = Spree::User.all.map{|x| x.email} %>
+      <div class="col-xs-12 col-md-4">
+        <div class="form-group">
+          <label>From</label>
+          <%= select_tag "copy_from", options_for_select(@users), { class: 'select2', :include_blank => '', :required => true} %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="form-group">
+          <label>To</label>
+          <%= select_tag "copy_to", options_for_select(@users), { class: 'select2', :include_blank => '', :required => true} %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="form-group" style="margin-top: 22px;">
+          <%= button Spree.t('actions.copy') %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
