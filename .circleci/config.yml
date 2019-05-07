@@ -15,7 +15,7 @@ jobs: # a collection of steps
       - checkout # special step to check out source code to working directory
 
       - restore_cache:
-          key: v1-phantomjs-2.1.1
+          key: v1-phantomjs
 
       - run:
           name: Install phantomjs
@@ -24,10 +24,11 @@ jobs: # a collection of steps
               sudo curl --output /usr/local/bin/phantomjs https://s3.amazonaws.com/circle-downloads/phantomjs-2.1.1
             fi
 
+            chmod -R 777 /usr/local/bin/phantomjs
             sudo chmod ugo+x /usr/local/bin/phantomjs
 
       - save_cache:
-          key: v1-phantomjs-2.1.1
+          key: v1-phantomjs
           paths:
             - /usr/local/bin/phantomjs
 
