@@ -18,7 +18,7 @@ RSpec.feature 'Wishlist', :js do
       scenario 'when user has an existing wishlist' do
         wishlist = create(:wishlist, user: user)
 
-        visit spree.account_path
+        visit spree.wishlists_path
         click_link wishlist.name
         click_link 'Create new wishlist'
 
@@ -123,7 +123,7 @@ RSpec.feature 'Wishlist', :js do
   private
 
   def visit_edit_wishlist
-    visit spree.account_path
+    visit spree.wishlists_path
     click_link wishlist.name
     click_link 'Edit wishlist'
   end

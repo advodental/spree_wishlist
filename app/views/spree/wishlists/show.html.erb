@@ -57,7 +57,7 @@
       </td>
       <td>
         <h4><%= link_to product.name, product %></h4>
-        <p><%= variant_options variant %></p>
+        <p><%= variant.options_text %></p>
         <%= truncate(strip_tags(product.description), length: 100, omission: '...') %>
       </td>
       <td>
