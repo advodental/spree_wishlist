@@ -12,8 +12,7 @@ class Spree::WishlistsController < Spree::StoreController
   end
 
   def index
-    @wishlists = spree_current_user.wishlists
-    respond_with(@wishlist)
+    redirect_to wishlist_path(spree_current_user.wishlist_all)
   end
 
   def edit
