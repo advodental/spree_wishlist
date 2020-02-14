@@ -8,4 +8,9 @@ Spree.user_class.class_eval do
     default_wishlist.update_attribute(:is_default, true) unless default_wishlist.is_default?
     default_wishlist
   end
+
+  def wishlist_all
+    wishlist
+    wishlists.find_or_create_by(name: 'All')
+  end
 end

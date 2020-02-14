@@ -31,6 +31,10 @@ class Spree::Wishlist < ActiveRecord::Base
     !self.is_private?
   end
 
+  def is_all?
+    self.name == 'All'
+  end
+
   private
 
   def set_access_hash
